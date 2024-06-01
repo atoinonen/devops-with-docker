@@ -1,0 +1,3 @@
+$ docker run -it --name tehtava --rm ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+$ docker exec tehtava apt update
+$ docker exec tehtava apt -y install curl
