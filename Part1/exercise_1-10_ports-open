@@ -1,0 +1,5 @@
+$ cp exercise_1-8_two-line-dockerfile/Dockerfile Dockerfile
+$ docker build -t web-server .
+$ docker run -p 127.0.0.1:8000:8080 -d web-server
+$ curl localhost:8000
+{"message":"You connected to the following path: /","path":"/"}
