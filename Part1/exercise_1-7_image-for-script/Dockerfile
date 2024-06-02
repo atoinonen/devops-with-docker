@@ -1,0 +1,10 @@
+FROM ubuntu:22.04
+
+WORKDIR /usr/src/app
+
+RUN apt update
+RUN apt -y install curl
+
+COPY script.sh .
+
+CMD ./script.sh
