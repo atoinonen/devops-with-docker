@@ -1,0 +1,9 @@
+services:
+  frontend:
+    image: frontend
+    ports:
+      - 127.0.0.1:8080:5000
+  backend:
+    image: backend
+    ports:
+      - 127.0.0.1:80:80
