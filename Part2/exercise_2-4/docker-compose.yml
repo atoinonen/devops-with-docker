@@ -1,0 +1,14 @@
+services:
+  frontend:
+    image: frontend
+    ports:
+      - 127.0.0.1:8080:5000
+  backend:
+    image: backend
+    ports:
+      - 127.0.0.1:80:80
+    environment:
+      - REQUEST_ORIGIN=http://localhost:8080
+      - REDIS_HOST=redis
+  redis:
+    image: redis
