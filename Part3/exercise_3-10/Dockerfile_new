@@ -1,0 +1,11 @@
+FROM alpine
+
+WORKDIR /usr/src/app
+
+RUN apk --no-cache add curl
+
+COPY script.sh .
+
+USER 405
+
+CMD ./script.sh

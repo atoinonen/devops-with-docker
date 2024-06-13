@@ -1,0 +1,5 @@
+REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
+frontend     latest    a470795b3781   About a minute ago   129MB	#Multi-stage build
+<none>       <none>    a4fab7a26105   About a minute ago   483MB	#All RUN commands on a single line
+<none>       <none>    7cad647e05f3   11 minutes ago       483MB	#Swithced to alpine
+<none>       <none>    2841fd5d67bc   3 hours ago          1.27GB	#Original image

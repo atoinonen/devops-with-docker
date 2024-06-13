@@ -1,0 +1,5 @@
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+backend      latest    60acf1117c21   2 minutes ago    19.1MB	#FROM scratch
+<none>       <none>    335ed2a7a6ae   7 minutes ago    26.9MB	#Used builder pattern
+<none>       <none>    d0fb2e8037cc   18 minutes ago   471MB	#Switched to golang:alpine
+<none>       <none>    4e764864371f   21 minutes ago   1.07GB	#First image

@@ -1,0 +1,28 @@
+$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+curler       new       5cf3d55e576f   31 minutes ago   13.1MB
+curler       old       fd4a44dcdedd   33 minutes ago   137MB
+
+$ docker image history curler:old
+IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+fd4a44dcdedd   2 hours ago   CMD ["/bin/sh" "-c" "./script.sh"]              0B        buildkit.dockerfile.v0
+<missing>      2 hours ago   COPY script.sh . # buildkit                     110B      buildkit.dockerfile.v0
+<missing>      2 hours ago   RUN /bin/sh -c apt -y install curl # buildkit   7MB       buildkit.dockerfile.v0
+<missing>      2 hours ago   RUN /bin/sh -c apt update # buildkit            52.1MB    buildkit.dockerfile.v0
+<missing>      2 hours ago   WORKDIR /usr/src/app                            0B        buildkit.dockerfile.v0
+<missing>      10 days ago   /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>      10 days ago   /bin/sh -c #(nop) ADD file:89847d76d242dea90…   77.9MB
+<missing>      10 days ago   /bin/sh -c #(nop)  LABEL org.opencontainers.…   0B
+<missing>      10 days ago   /bin/sh -c #(nop)  LABEL org.opencontainers.…   0B
+<missing>      10 days ago   /bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH     0B
+<missing>      10 days ago   /bin/sh -c #(nop)  ARG RELEASE                  0B
+
+$ docker image history curler:new
+IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+5cf3d55e576f   2 hours ago   CMD ["/bin/sh" "-c" "./script.sh"]              0B        buildkit.dockerfile.v0
+<missing>      2 hours ago   USER 405                                        0B        buildkit.dockerfile.v0
+<missing>      2 hours ago   COPY script.sh . # buildkit                     110B      buildkit.dockerfile.v0
+<missing>      2 hours ago   RUN /bin/sh -c apk --no-cache add curl # bui…   5.29MB    buildkit.dockerfile.v0
+<missing>      2 hours ago   WORKDIR /usr/src/app                            0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago   /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>      3 weeks ago   /bin/sh -c #(nop) ADD file:e3abcdba177145039…   7.79MB

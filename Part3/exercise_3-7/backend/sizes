@@ -1,0 +1,15 @@
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+backend      latest    335ed2a7a6ae   7 minutes ago    26.9MB	#Used builder pattern
+<none>       <none>    d0fb2e8037cc   18 minutes ago   471MB	#Switched to golang:alpine
+<none>       <none>    4e764864371f   21 minutes ago   1.07GB	#First image
+
+
+$ docker image history backend
+IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+335ed2a7a6ae   7 minutes ago   CMD ["./server"]                                0B        buildkit.dockerfile.v0
+<missing>      7 minutes ago   USER 405                                        0B        buildkit.dockerfile.v0
+<missing>      7 minutes ago   COPY /usr/src/app/server /usr/src/app/ # bui…   19.1MB    buildkit.dockerfile.v0
+<missing>      7 minutes ago   WORKDIR /usr/src/app                            0B        buildkit.dockerfile.v0
+<missing>      7 minutes ago   ENV PORT=80 REQUEST_ORIGIN=http://localhost:…   0B        buildkit.dockerfile.v0
+<missing>      3 weeks ago      /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+
